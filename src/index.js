@@ -1,0 +1,18 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const book_1 = require("../src/book");
+const members_1 = require("../src/members");
+const library_1 = require("../src/library");
+const library = new library_1.Library();
+const book1 = new book_1.Book("1984", "George Orwell");
+const book2 = new book_1.Book("To Kill a Mockingbird", "Harper Lee");
+library.addBook(book1);
+library.addBook(book2);
+const member1 = new members_1.Member("Alice");
+library.registerMember(member1);
+library.borrowBook("Alice", "1984");
+library.listAvailableBooks();
+library.listBorrowedBooks();
+library.returnBook("Alice", "1984");
+library.listAvailableBooks();
+library.listBorrowedBooks();
